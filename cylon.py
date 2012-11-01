@@ -1,19 +1,18 @@
 #!/usr/bin/env python
 
-import time
-import piface.pfio
-from array import *
+from time import sleep
+import piface.pfio as io
 
-piface.pfio.init()
+io.init()
 Leds = []
 count = True
 
 for i in range(1,9):
-	Leds.append(piface.pfio.LED(i))
+	Leds.append(io.LED(i))
 
 def toggle(light):
 	light.turn_on()
-	time.sleep(.05)
+	sleep(.05)
 	light.turn_off()
 
 while True:
